@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('../views/login.vue')
+    component: () => import('../views/login/login.vue')
   },
   //主页
   {
@@ -64,7 +64,13 @@ const routes: Array<RouteRecordRaw> = [
     path:'/main',
     name:'main',
     component:() => import('../views/index/mainIndex.vue')
-  }
+  },
+  //新主页
+  {
+    path:'/roster',
+    name:'roster',
+    component:() => import('../views/roster/index.vue')
+  },
 ]
 
 const router = createRouter({

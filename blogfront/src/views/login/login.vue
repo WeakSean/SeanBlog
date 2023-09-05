@@ -4,7 +4,7 @@
     <el-row type="flex" justify="center" align="middle">
       <el-col :span="20">
         <el-card class="logincard" :body-style="{ padding: '0px' }">
-          <img class="loginimg" src="../assets/login/login-1.jpeg" />
+          <img class="loginimg" src="../../assets/login/login-1.jpeg" />
           <div class="loginform">
             <el-form :model="loginData" label-width="120px">
               <el-form-item label="昵称">
@@ -55,7 +55,7 @@
 </el-dialog>
 </template>
 <script>
-import request from "../utils/request.js"
+import request from "../../utils/request.js"
 import { ElMessage } from 'element-plus'
 import router from "@/router";
 export default {

@@ -102,7 +102,7 @@ onMounted(() => {
     box-shadow: 0 5px 12px rgba(0,0,0,0.5);
     transition: all 0.2s;
     //margin: auto;
-    margin-top: -60px;
+    margin-top: 20px;
     border-radius: 10px;
     width: 70%;
     height: 10vh;

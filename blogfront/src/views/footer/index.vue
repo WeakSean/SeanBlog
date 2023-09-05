@@ -1,15 +1,18 @@
 <template>
-  <div class="endone">
-    Powered by
-    <p @click="toVue(vueUrl)" style="display: inline">Vue3 &</p>
-    <p @click="toEle(eleUrl)" style="display: inline"> Element Plus</p>
-    <br/>
-    Copyright 1999-2023,SuperSean
-  </div>
-  <div class="endtwo">
-    苏ICP备222016527号<br/>
-    {{ nowTime }}
-  </div>
+<!--  <div class="endone">-->
+<!--    Powered by-->
+<!--    <p @click="toVue(vueUrl)" style="display: inline">Vue3 &</p>-->
+<!--    <p @click="toEle(eleUrl)" style="display: inline"> Element Plus</p>-->
+<!--    <br/>-->
+<!--    Copyright 1999-2023,SuperSean-->
+<!--  </div>-->
+<!--  <div class="endtwo">-->
+<!--    苏ICP备222016527号<br/>-->
+<!--    {{ nowTime }}-->
+<!--  </div>-->
+    <div class="foot">
+
+    </div>
 </template>
 <script lang="ts" setup>
 import { ref,onMounted} from 'vue';
@@ -26,18 +29,9 @@ onMounted(() => {
 })
 </script>
 <style>
-.endone{
-  text-align: left;
-  position: absolute;
-  color: #313131;
-}
-.endone a{
-  text-decoration: none;
-  color: #313131;
-}
-.endtwo{
-  text-align: right;
-  position: relative;
-  color: #313131;
+.foot{
+    width: 100%;
+    height: 100%;
+    background-color: #86908A;
 }
 </style>

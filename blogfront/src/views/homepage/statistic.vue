@@ -1,20 +1,8 @@
 <template>
     <el-row>
+        <el-col :span="8"></el-col>
         <el-col :span="8">
-            <el-countdown title="Start to grab" :value="value" />
-        </el-col>
-        <el-col :span="8">
-            <el-countdown
-                title="Remaining VIP time"
-                format="HH:mm:ss"
-                :value="value1"
-            />
-<!--            <el-button class="countdown-footer" type="primary" @click="reset"-->
-<!--            >Reset-->
-<!--            </el-button>-->
-        </el-col>
-        <el-col :span="8">
-            <el-countdown format="DD [days] HH:mm:ss" :value="value2">
+            <el-countdown format="DD [天] HH [时] mm [分] ss [秒]" :value="value2">
                 <template #title>
                     <div style="display: inline-flex; align-items: center">
                         <el-icon style="margin-right: 4px" :size="12">
@@ -26,6 +14,7 @@
             </el-countdown>
 <!--            <div class="countdown-footer">{{ value2.format('YYYY-MM-DD') }}</div>-->
         </el-col>
+        <el-col :span="8"></el-col>
     </el-row>
 </template>
 

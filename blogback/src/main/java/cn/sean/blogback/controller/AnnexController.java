@@ -81,8 +81,8 @@ public class AnnexController {
     }
 
     @PostMapping("/getPhoto")
-    public R getPhoto(@RequestParam()){
-
+    public R getPhoto(){
+// TODO: 2023/8/25 分类 我最喜欢 近期添加 最近一个月点击次数最多
         return null;
     }
 }

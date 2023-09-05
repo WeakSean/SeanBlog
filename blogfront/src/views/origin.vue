@@ -1,4 +1,5 @@
 <template>
+<!--    <el-scrollbar height="300vh">-->
     <div class="mmj">
         <div class="daming">{{ wodemingzi }}</div>
         <div class="saobihua"><typer/></div>
@@ -7,6 +8,7 @@
     <div class="kkj" ref="mmj">
         <mainIndex></mainIndex>
     </div>
+<!--    </el-scrollbar>-->
 </template>
 <script>
 import typer from './components/origin/typer.vue'
@@ -31,7 +33,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 .mmj{
     position: relative;
     height: 100vh;
@@ -58,6 +60,7 @@ export default {
     top: 90%;
 }
 .kkj{
-    height: 100vh;
+    height: 200vh;
 }
+
 </style>

@@ -1,7 +1,9 @@
 <template>
     <el-container class="container">
         <el-header class="header">
-            <Statistic></Statistic>
+            <div class="box">
+                <Statistic></Statistic>
+            </div>
         </el-header>
         <el-main class="main">
 
@@ -23,7 +25,12 @@ import Statistic from "@/views/homepage/statistic.vue";
 .header{
     position: relative;
     top: 5vh;
-    width: 60%;
-    height: auto;
+    width: 80%;
+    height: 30vh;
+}
+.box{
+    padding: 50px;
+    border: 1px solid var(--el-border-color);
+    border-radius: 4px
 }
 </style>
