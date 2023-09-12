@@ -1,33 +1,47 @@
 <template>
-    <div class="content">
-        <div class="choose">
-            <el-upload
-                ref="uploadRef"
-                multiple
-                action="/"
-                :auto-upload="false"
-                :show-file-list="true"
-                :on-change="handleChange"
-                :on-preview="handlePreview"
-                :on-remove="handleRemove"
-                :before-remove="beforeRemove"
-                :on-exceed="handleExceed"
-            >
-                <el-button type="primary">选择文件</el-button>
-            </el-upload>
-        </div>
-        <div class="confirm">
-            <el-button type="success" @click="uploadFile">上传文件</el-button>
-        </div>
-    </div>
+    <el-container>
+        <el-header>
+            <el-input v-model="searchWrapper" placeholder="Please Input" class="search"/>
+            <div class="content">
+                <div class="choose">
+                    <el-upload
+                        ref="uploadRef"
+                        multiple
+                        action="/"
+                        :auto-upload="false"
+                        :show-file-list="true"
+                        :on-change="handleChange"
+                        :on-preview="handlePreview"
+                        :on-remove="handleRemove"
+                        :before-remove="beforeRemove"
+                        :on-exceed="handleExceed"
+                    >
+                        <el-button type="primary">选择文件</el-button>
+                    </el-upload>
+                </div>
+                <div class="confirm">
+                    <el-button type="success" @click="uploadFile">上传文件</el-button>
+                </div>
+            </div>
+        </el-header>
+        <el-main>
+            <PhotoWall/>
+        </el-main>
+    </el-container>
+
+    <el-divider></el-divider>
 
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { Search } from '@element-plus/icons-vue'
 import {ElMessage, ElMessageBox, UploadInstance, UploadProps, UploadUserFile} from 'element-plus'
 import request from "@/utils/request.js"
 import * as url from "url";
 import axios from "axios";
+import PhotoWall from "@/views/album/photoWall.vue";
+
+const searchWrapper:any = ref();
 const fileList = ref()
 const uploadRef = ref<UploadInstance>()
 const handleChange=(file,uploadFiles) =>{
@@ -103,7 +117,8 @@ const uploadFile=()=>{
 </script>
 <style scoped>
 .content{
-
+    width: 10vw;
+    float: right;
 }
 .choose{
     width: 50%;
@@ -116,5 +131,8 @@ const uploadFile=()=>{
 .el-upload-list{
     width: 100vw;
     display: block;
+}
+.search{
+    width: 20vw;
 }
 </style>

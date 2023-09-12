@@ -3,6 +3,7 @@ package cn.sean.blogback.controller;
 import cn.sean.blogback.common.R;
 import cn.sean.blogback.entity.Annex;
 import cn.sean.blogback.service.AnnexService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -80,9 +81,18 @@ public class AnnexController {
 
     }
 
-    @PostMapping("/getPhoto")
-    public R getPhoto(){
+    /**
+     * 近期添加
+     * @return R
+     */
+    @PostMapping("/getPhotoByRecent")
+    public R getPhotoByRecent(){
 // TODO: 2023/8/25 分类 我最喜欢 近期添加 最近一个月点击次数最多
-        return null;
+        QueryWrapper<Annex> wrapper = new QueryWrapper<>();
+        wrapper.orderByDesc("create_time");
+        wrapper.last("limit 6");
+//        Map<String, Object> map = annexService.getMap(wrapper);
+        List<Map<String, Object>> maps = annexService.listMaps(wrapper);
+        return R.success().put("data",maps);
     }
 }
