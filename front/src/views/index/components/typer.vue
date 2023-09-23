@@ -28,16 +28,16 @@ export default {
 
     },
     mounted() {
-
+        this.begin()
     },
     computed: {},
     watch: {
         order(newVal,oldVal){
-            if(this.order % 4 === 1){
+            if(newVal % 4 === 1){
                 this.str = "慢慢来，谁不是翻山越岭来相爱。"
-            } else if(this.order % 4 === 2){
+            } else if(newVal % 4 === 2){
                 this.str = "我们是孤独的总和，所以相遇了。"
-            } else if(this.order % 4 === 3){
+            } else if(newVal % 4 === 3){
                 this.str = "我不太喜欢猫，我喜欢狗。"
             } else {
                 this.str = "但我更欢喜你！"
@@ -49,7 +49,7 @@ export default {
         begin(){
             this.letters = this.str.split("");
             for(let i = 0 ; i < this.letters.length ; i++ ){
-                setTimeout();
+                setTimeout(this.write(i),i*100);
             }
         },
         //开始删除的效果动画
@@ -78,7 +78,7 @@ export default {
                 /*如果删除完毕，在300ms后开始输入*/
                 if(this.words.length === 0){
                     this.order++;
-                    let that=this;
+                    let that = this;
                     setTimeout(function(){
                         that.begin();
                     },300);
@@ -90,7 +90,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .typer{
     margin-top: 2%;
     box-sizing: border-box;
