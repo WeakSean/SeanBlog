@@ -1,10 +1,18 @@
 <template>
-
+    <div class="homepage-index">
+        <Statistic/>
+        <Calendar/>
+    </div>
 </template>
 
 <script>
+import Statistic from "@/views/homepage/components/statistic.vue";
+import Calendar from "@/views/homepage/components/calendar.vue";
 export default {
-    components: {},
+    components: {
+        Statistic,
+        Calendar
+    },
     data() {
         return {}
     },
