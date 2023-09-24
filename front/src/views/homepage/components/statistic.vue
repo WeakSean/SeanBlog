@@ -1,7 +1,6 @@
 <template>
-    <div>
-        <el-divider></el-divider>
-        <span class="calendar-title">日历</span>
+    <div class="statistic-main">
+        <span class="statistic-title">统计</span>
         <el-divider></el-divider>
         <el-row :gutter="20">
             <el-col :span="6">
@@ -18,7 +17,7 @@
                 <div>
                     <el-statistic title="男女比">
                         <template slot="formatter">
-                            456/2
+                            38/20
                         </template>
                     </el-statistic>
                 </div>
@@ -87,6 +86,26 @@ export default {
 </script>
 
 <style lang="scss">
+.statistic-main{
+    padding-top: 1vh;
+    padding-bottom: 2vw;
+    border-radius: 20px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.5);
+    background-color: rgba(24, 24, 24, 0.4);
+}
+.statistic-title{
+    display: flex;
+    margin: 2vh 0 0 2vw;
+    color: white;
+    font-size: 1.5rem;
+}
+.el-statistic .head{
+    color: white !important;
+    font-size: 1.2rem !important;
+}
+.el-statistic .con{
+    color: white !important;
+}
 .like {
     cursor: pointer;
     font-size: 25px;

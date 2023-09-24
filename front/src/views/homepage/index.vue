@@ -1,7 +1,7 @@
 <template>
     <div class="homepage-index">
-        <Statistic/>
-        <Calendar/>
+        <Statistic class="Statistic"/>
+        <Calendar class="Calendar"/>
     </div>
 </template>
 
@@ -30,6 +30,11 @@ export default {
 
 </script>
 
-<style>
-
+<style scoped>
+.Statistic{
+    margin: 2vw 2vw 2vw 2vw;
+}
+.Calendar{
+    margin: 2vw 2vw 2vw 2vw;
+}
 </style>
